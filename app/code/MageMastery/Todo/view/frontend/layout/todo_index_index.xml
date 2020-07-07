@@ -11,7 +11,12 @@
 		<referenceBlock name="page.main.title">
 			<action method="setPageTitle">
                 <argument translate="true" name="title" xsi:type="string">My TODO List</argument>
-            </action>>
+            </action>
 		</referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="magemastery.todo.block.list"
+                   template="MageMastery_Todo::todo.phtml"></block>
+        </referenceContainer>
     </body>
 </page>
