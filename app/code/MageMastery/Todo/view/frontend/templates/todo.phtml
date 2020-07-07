@@ -13,13 +13,22 @@ use Magento\Framework\View\Element\Template;
     <li>Task 2</li>
     <li>Task 3</li>
 </ul>
+<div data-bind="scope: 'todo'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
 <script type="text/x-magento-init">
     {
         "*": {
             "Magento_Ui/js/core/app": {
                 "components": {
                     "todo": {
-                        "component": "MageMastery_Todo/js/view/todo"
+                        "component": "MageMastery_Todo/js/view/todo",
+                        "template": "MageMastery_Todo/todo",
+                        "tasks": [
+                            {"label": "Task 1"},
+                            {"label": "Task 2"},
+                            {"label": "Task 3"}
+                        ]
                     }
                 }
             }
