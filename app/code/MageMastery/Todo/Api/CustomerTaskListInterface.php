@@ -2,7 +2,7 @@
 
 namespace MageMastery\Todo\Api;
 
-use MageMastery\Todo\Api\Data\TaskListInterface;
+use MageMastery\Todo\Api\Data\TaskInterface;
 
 /**
  * @api
@@ -14,4 +14,3 @@ interface CustomerTaskListInterface
      */
     public function getList();
 }
-

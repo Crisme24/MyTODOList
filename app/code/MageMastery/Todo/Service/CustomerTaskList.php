@@ -23,7 +23,7 @@ class CustomerTaskList implements CustomerTaskListInterface
     private $searchCriteriaBuilder;
 
     /**
-     * CustomerTaskList construct.
+     * CustomerTaskList constructor.
      * @param TaskRepositoryInterface $taskRepository
      * @param SearchCriteriaBuilder $searchCriteriaBuilder
      */

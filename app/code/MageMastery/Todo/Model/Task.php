@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace MageMastery\Todo\Model;
 
@@ -19,25 +19,16 @@ class Task extends AbstractModel implements TaskInterface
         $this->_init(TaskResource::class);
     }
 
-    /**
-     * @return int
-     */
     public function getTaskId(): int
     {
         return (int) $this->getData(self::TASK_ID);
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->getData(self::STATUS);
     }
 
-    /**
-     * @return string
-     */
     public function getLabel(): string
     {
         return $this->getData(self::LABEL);
