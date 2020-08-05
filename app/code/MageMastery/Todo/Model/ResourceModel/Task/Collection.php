@@ -42,4 +42,41 @@ class Collection extends AbstractCollection implements TaskSearchResultInterface
         $this->searchCriteria = $searchCriteria;
         return $this;
     }
+
+    /**
+     * Get total count
+     * 
+     * @return int
+     */
+    public function getTotalCount()
+    {
+        return $this->getSize();
+    }
+
+    /**
+     * Set total count
+     * 
+     * @param int $totalCount
+     * @return $this@SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function setTotalCount($totalCount)
+    {
+        return $this;
+    }
+
+    /**
+     * @param array|null $items
+     * @return $this
+     * @throws \Exception
+     */
+    public function setItems(array $items = null)
+    {
+        if(!$items) {
+            return $this;
+        }
+        foreach ($items as $item) {
+            $this->addItem($item);
+        }
+        return $this;
+    }
 }
