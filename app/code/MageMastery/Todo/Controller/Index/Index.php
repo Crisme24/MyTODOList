@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_type=1);
+
 namespace MageMastery\Todo\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
@@ -7,8 +9,8 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
 
 use MageMastery\Todo\Model\Task;
-use MageMastery\Todo\Model\ResourceModel\Task as TaskResource;
 use MageMastery\Todo\Model\TaskFactory;
+use MageMastery\Todo\Model\ResourceModel\Task as TaskResource;
 use MageMastery\Todo\Service\TaskRepository;
 
 class Index extends Action
@@ -50,7 +52,7 @@ class Index extends Action
         //     'customer_id' => 1
         // ]);
 
-        // $this->taskResource->save($task);
+        // $this->taskResource->save($task); //taskResource gguarda en la tabla
 
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
