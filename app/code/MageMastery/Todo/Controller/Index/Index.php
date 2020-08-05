@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace MageMastery\Todo\Controller\Index;
 
+use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
@@ -24,16 +25,20 @@ class Index extends Action
      */
     private $taskRepository;
 
+    private $searchCriteriaBuilder;
+
     public function __construct(
         Context $context, 
         TaskFactory $taskFactory, 
         TaskResource $taskResource,
-        TaskRepository $taskRepository
+        TaskRepository $taskRepository,
+        SearchCriteriaBuilder $searchCriteriaBuilder
         )
     {
         $this->taskFactory = $taskFactory;
         $this->taskResource = $taskResource;
         $this->taskRepository = $taskRepository;
+        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
 
         parent::__construct($context);
 
@@ -41,8 +46,10 @@ class Index extends Action
 
     public function execute()
     {
-        $task = $this->taskRepository->get(1);
-        var_dump($task->getData());
+        //$task = $this->taskRepository->get(1);
+
+        var_dump($this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
+        return;
 
         // $task = $this->taskFactory->create();
 

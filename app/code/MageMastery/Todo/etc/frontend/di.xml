@@ -10,5 +10,5 @@
     <preference for="MageMastery\Todo\Api\TaskManagementInterface" type="MageMastery\Todo\Service\TaskManagement" />
     <preference for="MageMastery\Todo\Api\TaskRepositoryInterface" type="MageMastery\Todo\Service\TaskRepository" />
     <preference for="MageMastery\Todo\Api\Data\TaskInterface" type="MageMastery\Todo\Model\Task" />
-    <preference for="MageMastery\Todo\Api\TaskSearchResultInterface" type="MageMastery\Todo\Model\ResourceModel\Task\Collection" />
+    <preference for="MageMastery\Todo\Api\Data\TaskSearchResultInterface" type="MageMastery\Todo\Model\ResourceModel\Task\Collection" />
 </config>
