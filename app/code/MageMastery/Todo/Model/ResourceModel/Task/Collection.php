@@ -2,6 +2,7 @@
 
 namespace MageMastery\Todo\Model\ResourceModel\Task;
 
+use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 use MageMastery\Todo\Model\Task;
