@@ -1,8 +1,9 @@
 define([
     'uiComponent',
     'jquery',
-    'Magento_Ui/js/modal/confirm'
-], function (Component, $, modal) {
+    'Magento_Ui/js/modal/confirm',
+    'MageMastery_Todo/js/service/task'
+], function (Component, $, modal, taskService) {
     'use strict';
 
     //console.log('Component');
@@ -10,34 +11,41 @@ define([
         defaults: {
             buttonSelector: '#add-new-task-button',
             newTaskLabel: '',
-            tasks: [{
-                    id: 1,
-                    label: "Task 1",
-                    status: false
-                },
-                {
-                    id: 2,
-                    label: "Task 2",
-                    status: false
-                },
-                {
-                    id: 3,
-                    label: "Task 3",
-                    status: false
-                },
-                {
-                    id: 4,
-                    label: "Task 4",
-                    status: true
-                },
-            ]
+            tasks: [],
+            // tasks: [{
+            //         id: 1,
+            //         label: "Task 1",
+            //         status: false
+            //     },
+            //     {
+            //         id: 2,
+            //         label: "Task 2",
+            //         status: false
+            //     },
+            //     {
+            //         id: 3,
+            //         label: "Task 3",
+            //         status: false
+            //     },
+            //     {
+            //         id: 4,
+            //         label: "Task 4",
+            //         status: true
+            //     },
+            // ]
         },
 
         initObservable: function () {
             this._super().observe(['tasks', 'newTaskLabel']);
 
-            this.tasks().push({
-                label: 'Task 5'
+            // this.tasks().push({
+            //     label: 'Task 5'
+            // });
+
+            var self = this;
+            taskService.getList().then(function (tasks) {
+                self.tasks(tasks);
+                return tasks;
             });
 
             return this;
@@ -47,8 +55,8 @@ define([
             const taskId = $(event.target).data('id');
 
             var items = this.tasks().map(function (task) {
-                if (task.id === taskId) {
-                    task.status = !task.status;
+                if (task.task_id === taskId) {
+                    task.status = task.status === 'open' ? 'complete' : 'open';
                 }
 
                 return task;
@@ -72,7 +80,7 @@ define([
                         }
 
                         self.tasks().forEach(function (task) {
-                            if (task.id !== taskId) {
+                            if (task.task_id !== taskId) {
                                 tasks.push(task);
                             }
                         });
