@@ -52,25 +52,25 @@ class Index extends Action
     public function execute()
     {
 
-        $task = $this->taskRepository->get(1);
-        $task->setData('status', 'complete');
+        // $task = $this->taskRepository->get(1);
+        // $task->setData('status', 'complete');
 
-        $this->taskManagement->save($task);
+        // $this->taskManagement->save($task);
 
-        //$task = $this->taskRepository->get(1);
+        // //$task = $this->taskRepository->get(1);
 
-        var_dump($this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
-        return;
+        // var_dump($this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
+        // return;
 
-        // $task = $this->taskFactory->create();
+        // // $task = $this->taskFactory->create();
 
-        // $task->setData([
-        //     'label' => 'New Task 22',
-        //     'status' => 'open',
-        //     'customer_id' => 1
-        // ]);
+        // // $task->setData([
+        // //     'label' => 'New Task 22',
+        // //     'status' => 'open',
+        // //     'customer_id' => 1
+        // // ]);
 
-        // $this->taskResource->save($task); //taskResource gguarda en la tabla
+        // // $this->taskResource->save($task); //taskResource guarda en la tabla
 
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
