@@ -46,3 +46,7 @@ ul.tasks li .status.complete {
 .form-container .actions-toolbar {
     margin-left: 5px;
 }
+
+ul.tasks .delete:hover {
+    cursor: pointer;
+}

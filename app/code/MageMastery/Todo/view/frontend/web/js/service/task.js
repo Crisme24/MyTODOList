@@ -14,6 +14,13 @@ define(['mage/storage'], function(storage) {
                     status: status
                 })
             )   
+        },
+
+        delete: async function (task) {
+            return await storage.post(
+                'rest/V1/customer/todo/task/delete',
+                JSON.stringify({task: task})
+            )   
         }
     };
 });
