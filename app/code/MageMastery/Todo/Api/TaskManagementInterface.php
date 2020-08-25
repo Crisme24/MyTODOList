@@ -13,9 +13,9 @@ interface TaskManagementInterface
 {
     /**
      * @param TaskInterface $task
-     * @return bool
+     * @return int
      */
-    public function save(TaskInterface $task): bool;
+    public function save(TaskInterface $task): int;
 
     /**
      * @param TaskInterface $task
