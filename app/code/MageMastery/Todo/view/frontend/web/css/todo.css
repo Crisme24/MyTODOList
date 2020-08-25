@@ -1,5 +1,6 @@
 ul.tasks {
-    padding: 1.8rem;
+    margin-top: 2rem;
+    padding-left: 20px;
 }
 
 ul.tasks li {
